@@ -1,0 +1,29 @@
+services:
+  test-server-1:
+    build: .
+    ports:
+      - "2200:22"
+    volumes:
+      - ./infra_lab_key.pub:/home/dev/.ssh/authorized_keys:ro
+    networks:
+      - test-network
+  test-server-2:
+    build: .
+    ports:
+      - "2201:22"
+    volumes:
+      - ./infra_lab_key.pub:/home/dev/.ssh/authorized_keys:ro
+    networks:
+      - test-network
+  test-server-3:
+    build: .
+    ports:
+      - "2202:22"
+    volumes:
+      - ./infra_lab_key.pub:/home/dev/.ssh/authorized_keys:ro
+    networks:
+      - test-network
+
+networks:
+  test-network:
+    driver: bridge
