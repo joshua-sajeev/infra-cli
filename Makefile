@@ -3,23 +3,23 @@
 help:
 	@echo "Available commands:"
 	@echo ""
-	@echo "  make up                  - Start all test servers"
-	@echo "  make up-detach           - Start all servers in background"
-	@echo "  make restart             - Restart all services"
-	@echo "  make logs                - View logs from all services"
-	@echo "  make down                - Stop all services"
+	@echo "  make test-env-up                  - Start all test servers"
+	@echo "  make test-env-up-detach           - Start all servers in background"
+	@echo "  make test-env-restart             - Restart all services"
+	@echo "  make test-env-logs                - View logs from all services"
+	@echo "  make test-env-down                - Stop all services"
 
-up:
-	docker-compose up
+test-env-up:
+	cd infra-lab && docker-compose up
 
-up-detach:
-	docker-compose up -d
+test-env-up-detach:
+	cd infra-lab && ddocker-compose up -d
 
-restart:
-	docker-compose restart
+test-env-restart:
+	cd infra-lab && docker-compose restart
 
-logs:
-	docker-compose logs -f
+test-env-logs:
+	cd infra-lab && docker-compose logs -f
 
-down:
-	docker-compose down
+test-env-down:
+	cd infra-lab && docker-compose down
