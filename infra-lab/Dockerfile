@@ -7,6 +7,7 @@ RUN apt-get update && \
         openssh-server \
         vim \
         git \
+        python3\
         curl \
     && rm -rf /var/lib/apt/lists/*
 

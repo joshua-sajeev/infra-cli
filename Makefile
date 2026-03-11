@@ -29,5 +29,5 @@ test-env-down:
 build:
 	go build -o infra-cli
 
-deploy:
-	go run ./cmd deploy
+rebuild:
+	cd infra-lab && docker compose down && docker compose up --build
