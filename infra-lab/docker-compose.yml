@@ -4,7 +4,7 @@ services:
     ports:
       - "2200:22"
     volumes:
-      - ./infra_lab_key.pub:/home/dev/.ssh/authorized_keys:ro
+      - ./infra_lab_key.pub:/home/dev/.ssh/authorized_keys
     networks:
       - test-network
   test-server-2:
@@ -12,7 +12,7 @@ services:
     ports:
       - "2201:22"
     volumes:
-      - ./infra_lab_key.pub:/home/dev/.ssh/authorized_keys:ro
+      - ./infra_lab_key.pub:/home/dev/.ssh/authorized_keys
     networks:
       - test-network
   test-server-3:
@@ -20,7 +20,7 @@ services:
     ports:
       - "2202:22"
     volumes:
-      - ./infra_lab_key.pub:/home/dev/.ssh/authorized_keys:ro
+      - ./infra_lab_key.pub:/home/dev/.ssh/authorized_keys
     networks:
       - test-network
 
