@@ -1,0 +1,22 @@
+services:
+  infra-cli-api:
+    build:
+      context: .
+      dockerfile: Dockerfile.dev
+    container_name: infra-cli-api-cont
+    image: infra-cli-api:dev
+    volumes:
+      - .:/app
+    env_file:
+      - ./.env
+    environment:
+      - SERVICE_TYPE=api
+    networks:
+      - mynetwork
+    ports:
+      - "8080:8080"
+
+
+networks:
+  mynetwork:
+    driver: bridge
