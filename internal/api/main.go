@@ -7,6 +7,8 @@ import (
 )
 
 func main() {
+	// ctx, stop := signal.NotifyContext(context.Background(), os.Interrupt, syscall.SIGTERM)
+	// defer stop()
 	r := gin.Default()
 
 	// Define a simple GET endpoint
@@ -17,4 +19,5 @@ func main() {
 		})
 	})
 	r.Run(":8080")
+
 }
